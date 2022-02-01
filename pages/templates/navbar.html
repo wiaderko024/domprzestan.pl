@@ -1,0 +1,32 @@
+{% load static %}
+
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-stick-dark" data-navbar="sticky">
+      <div class="container">
+
+        <div class="navbar-left">
+          <button class="navbar-toggler" type="button">&#9776;</button>
+          <a class="navbar-brand" href="{% url 'home_page' %}">
+            <h1 style="color: white; font-family: 'Almendra Display', cursive;" class="logo-light">DOMPRZESTAN</h1>
+            <h1 style="color: black; font-family: 'Almendra Display', cursive;" class="logo-dark">DOMPRZESTAN</h1>
+
+          </a>
+        </div>
+
+        <section class="navbar-mobile">
+          <span class="navbar-divider d-mobile-none"></span>
+
+          <nav class="nav nav-navbar">
+            <a class="nav-link" href="#">O Projekcie</a>
+            <a class="nav-link" href="#">Wydarzenia</a>
+            <a class="nav-link" href="#">Współpraca</a>
+            <a class="nav-link" href="#">Kup sztukę</a>
+            <a class="nav-link" href="#">Kontakt</a>
+          </nav>
+        </section>
+
+        <a class="btn btn-sm btn-round btn-success" href="#">Zaloguj się</a>
+
+      </div>
+    </nav>
+    <!-- /.navbar -->

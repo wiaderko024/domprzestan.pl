@@ -1,0 +1,73 @@
+{% extends 'base_index.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Robotnicze Stworzaszynie Anaflabetuw</title>
+{% endblock %}
+
+{% block content %}
+       <!-- Header -->
+    <header class="header text-white pt-12 pb-10" style="background-image: url({% static 'img/house.jpg' %}); min-height: 100vh;">
+      <div class="container">
+        <h1 class="text-center">Robotnicze Stworzaszynie Anaflabetuw</h1>
+        <p class="lead-2 mt-6 text-center">This is a starting point for your next awesome project. The skeleton is ready, just populate it.</p>
+      </div>
+    </header><!-- /.header -->
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+
+      <!--
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      | Populate the page
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      !-->
+      <section class="section">
+        <div class="container">
+          <header class="section-header">
+            <small>Aktualności</small>
+            <h2>Halo co tu sie dzieje</h2>
+            <hr>
+          </header>
+
+          <div class="row">
+            <section class="section p-0">
+                <div class="container-fluid px-0">
+                    {% for post in posts %}
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="row no-gutters">
+                                <div class="col-md-6 bg-img mh-300 order-md-2" style="background-image: url('{{ post.cover.url }}');"></div>
+                                <div class="col-10 col-md-4 mx-auto py-8 text-center text-md-left">
+                                    <p class="small-2 text-light">{{ post.created_at }}</p>
+                                    <h4 class="text-white">{{ post.title }}</h4>
+                                    <p>{{ post.description }}</p>
+                                    <br>
+                                    <a class="btn btn-round btn-success" href="{% url 'post_page' post.id %}">Czytaj dalej</a>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="row no-gutters">
+                                <div class="col-md-6 bg-img mh-300" style="background-image: url('{{ post.cover.url }}');"></div>
+                                    <div class="col-10 col-md-4 mx-auto py-8 text-center text-md-left">
+                                        <p class="small-2 text-light">{{ post.created_at }}</p>
+                                        <h4 class="text-white">{{ post.title }}</h4>
+                                        <p>{{ post.description }}</p>
+                                        <br>
+                                    <a class="btn btn-round btn-success" href="{% url 'post_page' post.id %}">Czytaj dalej</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
+          </div>
+
+        </div>
+      </section>
+
+
+
+    </main>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+      {% block title %}
+        <title>DomPrzestan.pl</title>
+      {% endblock %}
+
+    <!-- Styles -->
+    <link href="{% static 'assets/css/page.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="{% static 'assets/img/apple-touch-icon.png' %}">
+    <link rel="icon" href="{% static 'assets/img/favicon.png' %}">
+
+
+    <!--  Open Graph Tags -->
+    <meta property="og:title" content="TheSaaS">
+    <meta property="og:description" content="A responsive, professional, and multipurpose SaaS, Software, Startup and WebApp landing template powered by Bootstrap 4.">
+    <meta property="og:image" content="http://thetheme.io/thesaas/assets/img/og-img.jpg">
+    <meta property="og:url" content="http://thetheme.io/thesaas/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+Display&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    {% include 'navbar.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'footer.html' %}
+
+    <!-- Scripts -->
+    <script src="{% static 'assets/js/page.min.js' %}"></script>
+
+  </body>
+</html>
